@@ -1,0 +1,120 @@
+@import "_normalize";
+
+a {
+    text-decoration: none;
+}
+body {
+    background: grey;
+}
+.main-btn {
+    width: 130px;
+    height: 54px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fb8f1d;
+    text-align: center;
+    &:hover {
+        background: none;
+        border: 1px solid #fb8f1d
+    }
+    a {
+        width: 100%;
+        // padding: 10px;
+        color: white;
+        font-size: 15px;
+
+        &:hover {
+            color: #fb8f1d;
+        }
+    }
+}
+
+.header {
+    &__wrapper {
+        // width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 45px 5%;
+        margin: 0 auto;
+    }
+
+    &__container {
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: 768px){
+            justify-content: flex-end;
+        }
+    }
+
+    &__nav {
+        max-width: 350px;
+        width: 100%;
+        padding-right: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (max-width: 768px){
+            display: none;
+        }
+    }
+
+    &__nav-btn {
+        a {
+            color: #b8becd;
+            font-size: 15px;
+
+            &:hover {
+                color: #202336;
+            }
+        }
+    }
+    &__logo {
+        position: relative; 
+        display: flex;
+    }
+    &__login {
+        margin-right: 20px;
+    }
+}
+.burger-menu__button {
+    position: absolute;
+    top: 15px;
+    left: 60px;
+    z-index: 60;
+    width: 10px;
+    height: 10px;
+    transition: 0.4s;
+    margin-left: 15px;
+    margin-top: 5px;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+.burger-menu__lines, 
+.burger-menu__lines:before,
+.burger-menu__lines:after {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #b8becd;
+    transition: 0.4s;
+}
+.burger-menu__lines {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &::before {
+        content: '';
+        top: -12px;
+        
+    }
+    &::after {
+        content: '';
+        top: 12px;
+    }
+}
